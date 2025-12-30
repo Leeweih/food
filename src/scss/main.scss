@@ -1,0 +1,6 @@
+/* src/scss/main.scss */
+@import "variables";                // 變數定義（如顏色、字型）
+@import "~bootstrap/scss/bootstrap"; // 匯入 Bootstrap 的 SCSS:contentReference[oaicite:10]{index=10}
+@import "mixins";                   // 自定義 mixins
+@import "base";                     // 基本樣式（reset、排版等）
+@import "components";               // 自定義元件樣式

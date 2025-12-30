@@ -1,0 +1,8 @@
+/* src/scss/_components.scss */
+.navbar {
+  background-color: $primary-color;
+}
+.card {
+  @include card-margin;
+  /* 可在此加入更多卡片相關樣式 */
+}

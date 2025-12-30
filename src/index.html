@@ -1,0 +1,155 @@
+<!-- src/index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>台灣美食介紹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- 自訂 CSS -->
+  <style>
+    /* 輪播圖區塊背景橘色 */
+    #carouselArea {
+      background-color: #ff6f00;
+      padding: 30px 0;
+    }
+
+    /* 調整輪播圖片大小 & 置中 */
+    .carousel-inner img {
+      height: 300px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* 小卡片動畫用陰影 */
+    .card {
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">台灣美食</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">店面特色</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">關於我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 輪播圖區塊 -->
+  <div id="carouselArea" data-aos="fade-up" data-aos-duration="1000">
+    <div id="carouselExample" class="carousel slide mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/3.jpg" class="d-block w-100" alt="美食1">
+        </div>
+        <div class="carousel-item">
+          <img src="images/4.webp" class="d-block w-100" alt="美食2">
+        </div>
+        <div class="carousel-item">
+          <img src="images/5.jpg" class="d-block w-100" alt="美食3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 店面特色 -->
+  <div class="container mt-5" id="features">
+    <h2 data-aos="fade-right" data-aos-duration="1000">店面特色</h2>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="card">
+          <img src="images/下載.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <p class="card-text">經典台灣小籠包，皮薄多汁。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
+        <div class="card">
+          <img src="images/1.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <p class="card-text">濃郁香辣牛肉麵，是店家招牌。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-duration="1400">
+        <div class="card">
+          <img src="images/2.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <p class="card-text">香醇可口的珍珠奶茶，甜而不膩。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 關於我們 -->
+  <div class="container mt-5" id="about" data-aos="fade-left" data-aos-duration="1000">
+    <h2>關於我們</h2>
+    <p>我們是一群熱愛台灣傳統美食的團隊，致力於將最道地的風味呈現給顧客。從傳統小吃到創新飲品，每一道料理都蘊含對美食的熱情和故事。</p>
+  </div>
+
+  <!-- 聯絡我們 -->
+  <div class="container mt-5 mb-5" id="contact" data-aos="fade-up" data-aos-duration="1000">
+    <h2>聯絡我們</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">姓名</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">電子信箱</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">留言內容</label>
+        <textarea class="form-control" id="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">送出</button>
+    </form>
+  </div>
+
+  <!-- main.js + Bootstrap JS -->
+  <script type="module" src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true, // 只觸發一次動畫
+    });
+  </script>
+
+</body>
+</html>
